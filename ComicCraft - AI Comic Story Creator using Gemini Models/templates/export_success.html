@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Exported - ComicCraft</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 450px;
+        }
+        h2 {
+            color: #27ae60;
+        }
+        p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #0066cc;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #27ae60;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>✔ Comic Exported Successfully!</h2>
+        <p>Your AI-powered comic has been generated and compiled. You can download your copy below or start creating another adventure!</p>
+        
+        {% if pdf_path %}
+        <a href="/download-pdf?pdf_path={{ pdf_path }}" class="btn btn-secondary">Download PDF Now</a>
+        {% endif %}
+        <a href="/" class="btn btn-primary">Go Create Another Comic</a>
+    </div>
+</body>
+</html>
